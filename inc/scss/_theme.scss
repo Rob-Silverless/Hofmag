@@ -1,0 +1,59 @@
+/*! == THEME STYLES == */
+
+/*===========GLOBAL==========*/
+.section{
+	&__light-grey{
+		background-color:$brand-light-grey;
+	}
+	&__mid-grey-opacity{
+		background-color:rgba($brand-mid-grey, .3);
+	}
+	&__mid-grey{
+		background-color:$brand-mid-grey;
+	}
+	&__secondary{
+		background-color:$brand-secondary;
+	}
+	&__primary{
+		background-color:$brand-primary;
+	}
+	&__white{
+		background-color:white;
+	}
+}
+.bgImage{
+	&__cover{
+		background-size:cover;
+	}
+	&__norepeat{
+		background-repeat: no-repeat;
+	}
+	&__center{
+		background-position: center;
+	}
+}
+/*===========HEADER==========*/
+
+
+/*===========BODY==========*/
+.image-overlap{
+	position: relative;
+	div{
+		position:absolute;
+		background-size: cover;
+		background-position:center;
+		width: 100%;
+	}
+	&__l0{
+		left: 0;
+	}
+	&__tn50{
+		top: rem-calc(-50);
+	}
+	&__h130{
+		height: 130%;
+	}
+}
+
+/*===========FOOTER==========*/
+
