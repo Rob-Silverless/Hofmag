@@ -257,8 +257,9 @@ jQuery(document).ready(function($) {
     "padding-top": navHeight + "px"
   });
 
-  $("#singleCarousel").owlCarousel({
+  $(".single-carousel").owlCarousel({
     items: 1,
     loop:true,
+    nav: true
   })
 }); //Don't remove ---- end of jQuery wrapper

@@ -32,8 +32,84 @@
 		background-position: center;
 	}
 }
+.button{
+	display: inline-block;
+	&__light-grey{
+		background-color:$brand-light-grey;
+	}
+	&__mid-grey-opacity{
+		background-color:rgba($brand-mid-grey, .3);
+	}
+	&__mid-grey{
+		background-color:$brand-mid-grey;
+	}
+	&__secondary{
+		background-color:$brand-secondary;
+	}
+	&__primary{
+		background-color:$brand-primary;
+	}
+	&__white{
+		background-color:white;
+	}
+	&__color-white{
+		color:white;
+	}
+	&__hover-text-secondary{
+		&:hover{
+			color:$brand-secondary;
+		}
+	}
+	&__hover-text-white{
+		&:hover{
+			color:white;
+		}
+	}
+	&__hover-primary{
+		&:hover{
+			background-color:$brand-primary;
+		}
+	}
+	&__caps{
+		text-transform: uppercase;
+	}
+}
+.col{
+	&__double-list{
+		ul{
+			li{
+				display: inline-block;
+				&:nth-of-type(odd){
+					width: 39%
+				}
+				&:nth-of-type(even){
+					width: 60%
+				}
+			}
+		}
+	}
+	&__circle-list{
+		ul{
+			li{
+				padding-left:rem-calc(20);
+				position:relative;
+				margin-bottom:rem-calc(20);
+				&:before{
+					content:'';
+					position: absolute;
+					left: 0;
+					top: 50%;
+					transform:translateY(-50%);
+					width: rem-calc(10);
+					height: rem-calc(10);
+					border:2px solid $brand-primary;
+					border-radius:50%;
+				}
+			}
+		}
+	}
+}
 /*===========HEADER==========*/
-
 
 /*===========BODY==========*/
 .image-overlap{
@@ -54,6 +130,19 @@
 		height: 130%;
 	}
 }
-
+.single-carousel{
+	.owl-nav{
+		.owl-next, .owl-prev{
+			&::before{
+				background-color:white !important;
+				width:rem-calc(50);
+				height:rem-calc(50);
+				svg{
+					path: $brand-light-grey;
+				}
+			}
+		}
+	}
+}
 /*===========FOOTER==========*/
 

@@ -2,14 +2,6 @@
 
 .hero {
   @include backgroundCover;
-  display: grid;
-
-  .container {
-    display: grid;
-    align-content: flex-end;
-    height: 100%;
-    color: white;
-  }
 }
 
 .content-page {

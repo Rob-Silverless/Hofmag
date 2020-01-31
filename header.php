@@ -18,7 +18,7 @@
 
 <title>Hofmag</title>
 
-<link href="https://fonts.googleapis.com/css?family=Lato:300,900&display=swap" rel="stylesheet"/> 
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,900&display=swap" rel="stylesheet"/> 
 <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" type="image/x-icon" />
 
 <?php wp_head(); ?>

@@ -83,6 +83,12 @@ p {
     font-family: $brand-font;
     color: $brand-primary;
     }
+    &.primary-color{
+        color: $brand-primary;
+    }
+    &.alt-color{
+        color: $brand-secondary;
+    }
 }
 
 a {
@@ -136,7 +142,7 @@ ul {
         color: white;
     }
     &__thin {
-        font-weight: 100;
+        font-weight: 300;
     }
     &__brand-color {
       color: $brand-primary;
@@ -221,6 +227,10 @@ select:focus {
 
 .align-center {
 	text-align: center;
+}
+
+.align-right {
+    text-align: right;
 }
 
 /*===========HEADER==========*/
@@ -498,7 +508,7 @@ footer {
 	
 	.socket {
 		letter-spacing: 1px;
-		background: $brand-secondary;
+		background: $brand-mid-grey;
 		color: white;
 		padding: 1em;
 		
@@ -517,7 +527,7 @@ footer {
 		}
 		
 		.mandatory {
-			justify-content: flex-end;
+			justify-content: flex-start;
 			
 			.divider {
 				margin-right: 0.5em;
