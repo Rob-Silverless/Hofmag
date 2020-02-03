@@ -1,6 +1,12 @@
 /*! == THEME STYLES == */
 
 /*===========GLOBAL==========*/
+.mt-10{
+	margin-top:-10rem
+}
+.r25{
+	transform:rotate(25deg);
+}
 .section{
 	&__light-grey{
 		background-color:$brand-light-grey;
@@ -55,6 +61,12 @@
 	&__color-white{
 		color:white;
 	}
+	&__color-primary{
+		color:$brand-primary;
+	}
+	&__color-secondary{
+		color:$brand-secondary;
+	}
 	&__hover-text-secondary{
 		&:hover{
 			color:$brand-secondary;
@@ -68,6 +80,11 @@
 	&__hover-primary{
 		&:hover{
 			background-color:$brand-primary;
+		}
+	}
+	&__hover-white{
+		&:hover{
+			background-color:white;
 		}
 	}
 	&__caps{
@@ -109,9 +126,37 @@
 		}
 	}
 }
+.border{
+	border-width: 1px;
+	border-style:solid;
+	border-color:white;
+	&__brand-primary{
+		border-color:$brand-primary;
+	}
+}
 /*===========HEADER==========*/
 
 /*===========BODY==========*/
+.hero{
+	&__heading-image{
+		display:flex;
+		align-items:center;
+		justify-content:flex-start;
+		> .container{
+			width:100%;
+		}
+	}
+	&__halfimage{
+		display:flex;
+		align-items: stretch;
+	}
+	&__light{
+		color:white;
+		h1, h2, h3, h4, h5, h6{
+			color:white;
+		}
+	}
+}
 .image-overlap{
 	position: relative;
 	div{
@@ -141,6 +186,86 @@
 					path: $brand-light-grey;
 				}
 			}
+		}
+	}
+}
+.mid-carousel{
+	.owl-nav{
+		width:rem-calc(600);
+		left:calc(50% - 300px);
+		.owl-next, .owl-prev{
+			&::before{
+				background-color:white !important;
+				width:rem-calc(50);
+				height:rem-calc(50);
+			}
+		}
+	}
+	.item{
+		height:rem-calc(600);
+		max-width:rem-calc(500);
+		margin:auto;
+		background-size:cover;
+		background-position:center;
+		background-repeat:no-repeat;
+		overflow:hidden;
+		position:relative;
+		.content-container{
+			position:absolute;
+			width:90%;
+			top:calc(100% - 84px - 2rem);
+			min-height:80%;
+			transition:$slowEffect;
+			display:grid;
+			grid-template-rows: rem-calc(105) rem-calc(270) rem-calc(50);
+			h6{
+				border-bottom: 1px solid white;
+			}
+			background-color:$brand-secondary;
+			color:white;
+			.button{
+
+			}
+		}
+	}
+	.center{
+		.item{
+			.content-container{
+				top:20%;
+				transition:$slowEffect;
+			}
+		}
+	}
+}
+
+.effective-content{
+	display:flex;
+	align-items:stretch;
+	> div{
+		width:50%;
+	}
+	&__image{
+		background-position:center;
+		background-size:cover;
+		background-repeat:no-repeat;
+	}
+	&__content{
+		
+	}
+	&:nth-of-type(odd){
+		.effective-content__content{
+			order:1;
+		}
+		.effective-content__image{
+			order:2;
+		}
+	}
+	&:nth-of-type(even){
+		.effective-content__content{
+			order:2;
+		}
+		.effective-content__image{
+			order:1;
 		}
 	}
 }

@@ -7,7 +7,7 @@
 
 </main>
 
-<footer class="footer mr2 ml2 mb2">
+<footer class="footer mr1 ml1 mb1">
 
 	<div class="socket">
 

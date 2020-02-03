@@ -262,4 +262,12 @@ jQuery(document).ready(function($) {
     loop:true,
     nav: true
   })
+
+  $(".mid-carousel").owlCarousel({
+    items: 2,
+    loop:true,
+    center: true,
+    margin:200,
+    nav: true
+  })
 }); //Don't remove ---- end of jQuery wrapper

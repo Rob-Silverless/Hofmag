@@ -241,13 +241,14 @@ select:focus {
 
 header {
     position: fixed;
+    top:0;
     width: 100%;
     font-family: $body-font;
     background:transparent;
     z-index: 1000;
     transition: all 0.5s ease;
     padding-left: 1em;
-    padding-right: 1em;    
+    padding-right: 1em; 
     a {
         color: white;
     }
@@ -323,6 +324,9 @@ nav {
 	width: 100%;
 	padding:0 3em;
 	border-right: 1px solid white;
+    >.container{
+        margin:0;
+    }
 	
 	.menu-trigger {
 		cursor: pointer;
@@ -351,16 +355,17 @@ nav {
     		position: relative;
     		display: inline-block;
 			padding:0;
-			color: white;
-		
+            font-size:rem-calc(12);
+			color: $brand-dark-grey;
+
 			a {
 			    display: block;
 			    padding: 0;
-			    color: white;
+			    color: $brand-dark-grey;
 			    line-height: 1em;
 				transition: color 1s ease;
 				text-transform: uppercase;
-				font-weight: 600;
+				font-weight: 300;
 			}
 			
 			&.current-menu-item:before {
@@ -479,6 +484,8 @@ nav {
 /*===========FOOTER==========*/
 
 footer {
+
+    font-size:rem-calc(12);
 		
 	a {
 		color: $brand-tertiary;
@@ -510,7 +517,7 @@ footer {
 		letter-spacing: 1px;
 		background: $brand-mid-grey;
 		color: white;
-		padding: 1em;
+		padding: rem-calc(30) rem-calc(10);
 		
 		a {
     		color: white;
