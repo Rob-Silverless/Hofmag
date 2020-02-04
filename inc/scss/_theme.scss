@@ -1,6 +1,18 @@
 /*! == THEME STYLES == */
 
 /*===========GLOBAL==========*/
+input{
+	border:1px solid $brand-primary;
+	width: rem-calc(300);
+	padding:rem-calc(10) rem-calc(20);
+	margin-bottom: rem-calc(10);
+	text-transform: uppercase;
+	text-align: left;
+	&[type=submit]{
+		background-color: $brand-primary;
+		color: white;
+	}
+}
 .mt-10{
 	margin-top:-10rem
 }
@@ -135,9 +147,24 @@
 	}
 }
 /*===========HEADER==========*/
+.buy-now{
+	position: relative;
+	align-self:stretch;
+	a{
+		position:absolute;
+		height: 110%;
+		width: inherit;
+		img{
+			max-height: 100%;
+		}
+	}
+}
 
 /*===========BODY==========*/
 .hero{
+	&.h100{
+		height: calc(100vh - 2em);
+	}
 	&__heading-image{
 		display:flex;
 		align-items:center;
@@ -147,8 +174,44 @@
 		}
 	}
 	&__halfimage{
-		display:flex;
-		align-items: stretch;
+		position:relative;
+		display: flex;
+		align-items:center;
+		&__background{
+			width: 50%;
+			position:absolute;
+			top: 0;
+			left: 50%;
+			height: 100%;
+			background-size:cover;
+			background-position:center;
+			background-repeat:no-repeat;
+			z-index:1;
+			display: flex;
+			align-items:flex-end;
+			justify-content: flex-end;
+			&:after{
+				height: 50%;
+				width: 100%;
+				position:absolute;
+				bottom:0;
+				left: 0;
+				content: '';
+				background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+				z-index: 1;
+			}
+		}
+		&__content{
+			position:relative;
+			z-index: 2;
+			background-color:white;
+		}
+		&__quote{
+			color: white;
+			width: 60%;
+			position:relative;
+			z-index: 2;
+		}
 	}
 	&__light{
 		color:white;
@@ -267,6 +330,12 @@
 		.effective-content__image{
 			order:1;
 		}
+	}
+}
+
+.social{
+	img{
+		height: rem-calc(32);
 	}
 }
 /*===========FOOTER==========*/

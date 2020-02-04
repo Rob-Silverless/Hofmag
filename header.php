@@ -43,7 +43,16 @@
 		                ));
 		                ?>
 		            </div>
-		            <div class="col">
+		            <div class="col buy-now">
+		            	<?php if( have_rows('buy_now_info', 'options') ):
+	    					while( have_rows('buy_now_info', 'options') ): the_row(); ?>
+	    				<?php
+							$image = get_sub_field('image');
+						?>
+						<a href="<?php echo the_sub_field('link'); ?>">
+		    				<img src="<?php echo esc_url($image['url']); ?>"/>
+		    			</a>
+		    		<?php endwhile; endif;?>
 		            </div>
 		        </div>
 	    	</nav>

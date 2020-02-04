@@ -150,6 +150,9 @@ ul {
     &__alt-color {
       color: $brand-secondary;
     }
+    &__grey-color {
+      color: $brand-mid-grey;
+    }
     &__emphasis {
         font-style: italic;
     }
@@ -530,7 +533,7 @@ footer {
 		}
 		
 		.colophon {
-			justify-content: flex-start;
+			justify-content: center;
 		}
 		
 		.mandatory {

@@ -13,7 +13,15 @@
 
 		<div class="container fullwidth cols-4-16-4 cols-sm text-center-sm">
 
-			<div class="col colophon"></div>
+			<div class="col colophon">
+				<?php if( have_rows('footer_details', 'options') ):
+	    		while( have_rows('footer_details', 'options') ): the_row(); ?>
+	    			<?php
+						$image = get_sub_field('image');
+					?>
+	    			<img src="<?php echo esc_url($image['url']); ?>"/>
+	    		<?php endwhile; endif;?>
+			</div>
 
 			<div class="col mandatory">
 				<div>

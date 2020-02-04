@@ -12,16 +12,19 @@ get_header();?>
 
 <?php if( have_rows('benefits') ):
     while( have_rows('benefits') ): the_row(); ?>
-    	<div class="container cols-offset-4-16">
+    	<div class="container cols-offset-4-16 pt5">
     		<div class="col align-center pb5">
 	    		<h4 class="heading heading__lg heading__thin"><?php the_sub_field('title');?></h4>
 	    	</div>
 	    	<div class="col pb5">
 	    		<?php if( have_rows('benefit') ):
     				while( have_rows('benefit') ): the_row(); ?>
-    					<div class="container cols-5-19 pb3">
+                        <?php
+                            $image = get_sub_field('image');
+                        ?>
+    					<div class="container cols-4-20 grid-gap pb3">
     						<div class="col">
-
+                                <img src="<?php echo $image['url']; ?>"/>
     						</div>
     						<div class="col">
     							<h4 class="heading heading__sm heading__brand-color pb1"><?php the_sub_field('title');?></h4>
