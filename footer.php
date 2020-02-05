@@ -29,11 +29,12 @@
 
 					<span class="divider">|</span>
 
-					<a href="<?php echo home_url() . '/terms-conditions'; ?>">Terms</a>
-
-					<span class="divider">|</span>
-
-					<a href="<?php echo home_url() . '/privacy-policy'; ?>">Privacy</a>
+					<?php
+	                wp_nav_menu(array(
+	                    'theme_location'  => 'secondary-menu',
+	                    'container_class' => 'footerMenu'
+	                ));
+	                ?>
 				</div>
 			</div>
 

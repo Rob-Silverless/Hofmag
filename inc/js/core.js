@@ -1,4 +1,5 @@
 //@prepros-prepend jquery.magnific-popup.js
+//@prepros-prepend mixitup.js
 //@prepros-prepend owl.carousel.min.js
 
 jQuery(document).ready(function($) {
@@ -157,6 +158,25 @@ jQuery(document).ready(function($) {
     });
   });
 
+  /* ACCORDION */
+  $(".accordion:first-of-type h3").addClass('active');
+
+  $(".accordion h3").on('click', function() {
+    var self = this;
+    if ($(this).hasClass('active')){
+      $(this).removeClass('active')
+    } else {
+      $(this).addClass('active')
+    }
+    $(this).closest("div").siblings().find(".collapsible").slideUp(500);
+    $(this).parent().find(".collapsible").slideToggle(500, function() {
+      $('html,body').animate({
+        scrollTop: $(self).offset().top - 75
+      }, 500);
+    });
+  });
+  
+
   // ========== Tab Slider
 
   var action = false,
@@ -246,6 +266,22 @@ jQuery(document).ready(function($) {
     $('#' + selectedTab).addClass('selected');
   })
 
+
+  // ========== Filtering controller (mixitup)
+
+if($('#mixitup-gallery').length) {
+
+var campsMixer = mixitup('#mixitup-gallery', {
+    load: {
+        filter: 'all'
+    },
+    selectors: {
+        control: '.mixitup-control',
+        target: '.condition-item'
+    }
+});
+}
+
   //Mobile Menu
 
   $(".mobileMenu").click(function() {
@@ -270,4 +306,12 @@ jQuery(document).ready(function($) {
     margin:200,
     nav: true
   })
+
+  $(".research_carousel").owlCarousel({
+    items: 1,
+    loop:true,
+    nav: true
+  })
+
+  
 }); //Don't remove ---- end of jQuery wrapper

@@ -35,6 +35,9 @@ input{
 	&__primary{
 		background-color:$brand-primary;
 	}
+	&__tertiary{
+		background-color:$brand-tertiary;
+	}
 	&__white{
 		background-color:white;
 	}
@@ -219,6 +222,11 @@ input{
 			color:white;
 		}
 	}
+	&__features{
+		display:flex;
+		justify-content: space-around;
+		flex-direction:column;
+	}
 }
 .image-overlap{
 	position: relative;
@@ -332,11 +340,138 @@ input{
 		}
 	}
 }
+.features{
+	&__number{
+		background-color:$brand-primary;
+		width:rem-calc(30);
+		height:rem-calc(30);
+		border-radius:50%;
+		display: inline-block;
+		color:white;
+		text-align:center;
+		padding-top:rem-calc(4);
+		border:2px solid white;
+	}
+	&__image{
+		position:relative;
+	}
+}
+
+.research_content{
+	column-count: 3;
+	p{
+		margin-top:0;
+	}
+}
+
+.table_item{
+	display:grid;
+	grid-template-columns:1fr 1fr 1fr;
+	span{
+		width:49%;
+		display:inline-block;
+	}
+	.table_title, .table_content{
+		border-right:2px solid $brand-primary;
+		&:nth-of-type(3n){
+			border-right:0;
+		}
+	}
+}
+.conditions{
+	.filter{
+		fieldset{
+			border:0;
+			padding:0;
+		}
+		.wrapper-radio{
+			display:flex;
+			justify-content:center;
+			.mixitup-control-active{
+				font-weight:900;
+			}
+			> div{
+				border-right:1px solid $brand-mid-grey;
+				&:last-of-type{
+					border-right:none;
+				}
+			}
+			label{
+				&:hover{
+					cursor:pointer;
+				}
+			}
+			input{
+				display:none;
+			}
+		}
+	}
+	.condition-item{
+		width:100%;
+	}
+}
+
+.accordion{
+	&__triangle{
+		position:relative;
+		&:after{
+			position:absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: rem-calc(15) rem-calc(15) 0 rem-calc(15);
+			border-color: $brand-primary transparent transparent  transparent;
+			content:'';
+			top:0;
+			right:0;
+			transition:$fastEffect;
+		}
+		&.active{
+			&:after{
+				border-width: 0 rem-calc(15) rem-calc(15) rem-calc(15);
+				transition:$fastEffect;
+				border-color: transparent transparent $brand-primary transparent;
+			}
+		}
+	}
+	&:not(:first-of-type) .collapsible {
+		display: none;
+	}
+}
 
 .social{
 	img{
 		height: rem-calc(32);
 	}
 }
+
+.contact{
+	height:100%;
+	display:flex;
+	flex-direction:column;
+	justify-content:flex-end;
+	position:relative;
+	&:after{
+		position:absolute;
+		right:0;
+		top:0;
+		left:35%;
+		bottom:0;
+		content:'';
+		background-color:$brand-tertiary;
+		z-index:1;
+	}
+	> div{
+		width:100%;
+		position: relative;
+		z-index:2;
+	}
+	p{
+		margin-top:0;
+	}
+}
 /*===========FOOTER==========*/
 
+.footerMenu{
+	display:inline-block;
+}

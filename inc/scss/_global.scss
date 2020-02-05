@@ -137,6 +137,9 @@ ul {
     &__caps {
         text-transform: uppercase;
     }
+    &__capitalize {
+        text-transform: capitalize;
+    }
     
     &__light {
         color: white;
@@ -205,7 +208,10 @@ ul {
     
     &__xs {
         font-size: 1em;        
-    }   
+    }
+    &__xxs {
+        font-size: rem-calc(14);
+    }
     sup {
         vertical-align: text-top;
         font-style: italic;

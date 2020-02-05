@@ -56,6 +56,10 @@
         align-self: flex-end;
     }
 
+    &.align-vert-stretch > .col {
+        align-self: stretch;
+    }
+
     > .col {
         grid-column: span 24;
     }
@@ -119,7 +123,7 @@
         }   
         &.align-vert-b {
             align-self: flex-end;
-        }            
+        }      
     }
 }
 
