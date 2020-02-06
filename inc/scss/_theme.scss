@@ -24,7 +24,7 @@ input{
 		background-color:$brand-light-grey;
 	}
 	&__mid-grey-opacity{
-		background-color:rgba($brand-mid-grey, .3);
+		background-color:#d4d4d4;
 	}
 	&__mid-grey{
 		background-color:$brand-mid-grey;
@@ -150,15 +150,35 @@ input{
 	}
 }
 /*===========HEADER==========*/
+nav{
+	padding-top:2em;
+	padding-bottom:2em;
+    transition:$fastEffect;
+    a{
+    	border: 2px solid transparent;
+    	display: block;
+    	transition: $fastEffect;
+    	&:hover{
+    		border: 2px solid $brand-light-grey;
+    		transition: $fastEffect;
+    	}
+    }
+}
 .buy-now{
 	position: relative;
 	align-self:stretch;
 	a{
 		position:absolute;
-		height: 110%;
+		height: 110px;
+		margin-top: -70px;
 		width: inherit;
+		text-align: center;
 		img{
 			max-height: 100%;
+		}
+		&:hover{
+			border: 2px solid transparent;
+			margin-top: -60px;
 		}
 	}
 }
@@ -232,8 +252,9 @@ input{
 	position: relative;
 	div{
 		position:absolute;
-		background-size: cover;
+		background-size: contain;
 		background-position:center;
+		background-repeat: no-repeat;
 		width: 100%;
 	}
 	&__l0{

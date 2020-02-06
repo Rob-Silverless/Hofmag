@@ -285,7 +285,7 @@ header {
         transition: margin-top 0.5s ease;        
         
         &:first-of-type {
-            width:65%;
+            width:100%;
             margin-bottom: 0.5em;
             z-index: 100;
             transition: width 0.5s ease;
@@ -369,7 +369,7 @@ nav {
 
 			a {
 			    display: block;
-			    padding: 0;
+			    padding: rem-calc(10);
 			    color: $brand-dark-grey;
 			    line-height: 1em;
 				transition: color 1s ease;
@@ -464,11 +464,30 @@ nav {
 .scrolled header {
     background:white;
     box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+    .logo{
+        max-height: 2em;
+    }
     a{
         color: $brand-dark-grey
     }
     nav{
-        border-right: 1px solid $brand-dark-grey
+        padding-top:0.5em;
+        padding-bottom:0.5em;
+        transition:$fastEffect;
+        .buy-now{
+            a{
+                margin-top: -46px;
+                width: inherit;
+                text-align: center;
+                img{
+                    max-height: 100%;
+                }
+                &:hover{
+                    border: 2px solid transparent;
+                    margin-top: -36px;
+                }
+            }
+        }
     }
 }
 

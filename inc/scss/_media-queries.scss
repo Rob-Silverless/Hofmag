@@ -1,15 +1,107 @@
 /*! == MEDIA QUERIES == */
 
+
+/*===========MEDIA QUERIES==========*/
+
+@each $name, $size in $breakpoints {
+	
+	@media (max-width: #{$size}) {
+		
+		@for $i from 1 through $col-count {
+			
+			.container.cols-#{$name}-#{$i} > .col {
+				grid-column: span $i !important;
+			}
+		}
+		@for $gridColumnOne from 1 to $col-count {
+        @for $gridColumnTwo from 1 to $col-count {
+	            &.cols-#{$name}-#{$gridColumnOne}-#{$gridColumnTwo}{
+	                > .col:nth-of-type(2n -1) {
+	                    grid-column: span $gridColumnOne !important;     
+	                }       
+	                > .col:nth-of-type(2n) {
+	                    grid-column: span $gridColumnTwo !important;     
+	                } 
+	            }
+	        }
+	    }
+	    @for $gridOffset from 1 to $col-count {
+	        @for $grid from 1 to $col-count {
+	            &.cols-offset-#{$name}-#{$gridOffset}-#{$grid} > .col{
+	                grid-column-start:($gridOffset + 1) !important;
+	                grid-column-end:(($gridOffset + 1) + $grid) !important;
+	            }
+	        }
+	    }
+		.align-#{$name}-center{
+			text-align: center;
+		}
+	}
+}
+
 /*===========LARGE (1200px)==========*/
 
 @media only screen and (max-width: 1200px) {
 
 /*---GLOBALS---*/ 
+.container{
+	padding-left:rem-calc(20);
+	padding-right:rem-calc(20);
+	&.grid-gap {
+        grid-gap:1em;
+    }
+}
+
+.cols-xl-2-10-10{
+	> .col:nth-of-type(3n - 2){
+        grid-column: span 2 !important; 
+    }
+    > .col:nth-of-type(3n -1){
+        grid-column: span 10 !important; 
+    }
+    > .col:nth-of-type(3n){
+        grid-column: span 10 !important; 
+    }
+}
 
 /*---HEADER---*/ 
 
 /*---CONTENT---*/
+.hero{
+	.pt15{
+		padding-top:10em;
+	}
+	.col__double-list{
+		font-size:rem-calc(18);
+	}
+}
+.image-overlap{
+	position: relative;
+	div{
+		position:relative;
+		background-size: contain;
+		background-position:center;
+		width: 100%;
+	}
+	&__h130{
+		height: rem-calc(250);
+	}
+}
+.single-carousel-item{
+	> div {
+		padding:rem-calc(10) rem-calc(20);
+	}
+}
 
+.how-image{
+	padding-top:rem-calc(100);
+}
+.mid-carousel{
+	.owl-nav{
+		width:rem-calc(300);
+		left:calc(50% - 150px);
+	}
+}
 /*---FOOTER---*/
 
 }/*---end large mq---*/

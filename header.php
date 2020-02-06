@@ -32,10 +32,12 @@
         <header>
         	<nav id="nav">
 		        <div class="container fullwidth grid-gap cols-4-16-4 align-vert-c ">
-		            <div class="col pt2 pb2" id="logo">
+		            <div class="col" id="logo">
+		            	<a href="<?php echo get_home_url(); ?>">
 		                   <?php get_template_part("inc/img/logo"); ?>
+		                </a>
 		            </div>
-		            <div class="col pt2 pb2">
+		            <div class="col">
 		                <?php
 		                wp_nav_menu(array(
 		                    'theme_location'  => 'main-menu',

@@ -13,11 +13,11 @@ get_header();?>
 <?php if( have_rows('introduction') ):
     while( have_rows('introduction') ): the_row(); ?>
 <section class="section section__mid-grey-opacity mr1 ml1 mb1">
-	<div class="container cols-14-10">
-		<div class="col pt10 pb10">
+	<div class="container cols-14-10 cols-xl-24">
+		<div class="col pt10 pb10 align-xl-center">
 			<h3 class="heading heading__caps heading__thin heading__lg"><?php the_sub_field('text')?></h3>
 		</div>
-		<div class="col image-overlap">
+		<div class="col image-overlap align-xl-center">
 			<?php
 				$image = get_sub_field('image');
 			?>
@@ -41,7 +41,7 @@ get_header();?>
 	</div>
 	<?php if( have_rows('carousel_container') ):
     while( have_rows('carousel_container') ): the_row(); ?>
-		<div class="container cols-24">
+		<div class="container cols-24 cols-offset-xl-2-20">
 			<div class="col">
 				<div class="owl-carousel owl-theme single-carousel">
 					<?php if( have_rows('carousel_sections') ):
@@ -49,7 +49,7 @@ get_header();?>
 						<?php
 							$image = get_sub_field('image');
 						?>
-					<div class="container cols-12">
+					<div class="container cols-12 cols-xl-14-10 single-carousel-item">
 						<div class="col section section__white pt5 pl5 pr10 pb5">
 							<h4 class="heading heading__brand-color heading__md"><?php the_sub_field('title');?></h4>
 							<p><?php the_sub_field('content');?></p>
@@ -77,15 +77,15 @@ get_header();?>
     	<?php
 			$image = get_sub_field('image');
 		?>
-<section class="section mr1 ml1 mb1">
+<section class="section mr1 ml1 mb1 pt1 how">
 	<div class="container cols-offset-6-12">
 		<div class="col align-center pb3">
 			<h3 class="heading heading__lg heading__thin"><?php the_sub_field('title');?></h3>
 			<div><?php the_sub_field('content');?></div>
 		</div>
 	</div>
-	<div class="align-center pt20 pb5 bgImage bgImage__norepeat bgImage__cover" style="background-image: url('<?php echo esc_url($image['url']); ?>');">
-		<a class="button pr3 pl3 pt1 pb1 button__secondary button__color-white button__caps button__hover-text-secondary">Learn More</a>
+	<div class="align-center pt20 pb5 bgImage bgImage__norepeat bgImage__cover how-image" style="background-image: url('<?php echo esc_url($image['url']); ?>');">
+		<a class="button pr3 pl3 pt1 pb1 button__secondary button__color-white button__caps button__hover-text-secondary" href="<?php the_sub_field('link');?>">Learn More</a>
 	</div>
 </section>
 <?php endwhile; endif;?>

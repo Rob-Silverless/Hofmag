@@ -14,7 +14,7 @@ jQuery(document).ready(function($) {
 
   //Smooth Scroll
 
-  $("nav a, a.button, a.next-section, a.explore").click(function() {
+  /*$("nav a, a.button, a.next-section, a.explore").click(function() {
     if ($(this).attr("href") != "#") {
       $("html, body").animate(
         {
@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
       );
       return false;
     }
-  });
+  });*/
 
   /* ADD CLASS ON SCROLL*/
 
@@ -97,6 +97,7 @@ jQuery(document).ready(function($) {
   $(".read-more").click(function(e) {
     e.preventDefault();
     $(this).prev().slideToggle();
+    console.log('clicked');
   });
 
   $(".tab-trigger").click(function() {
@@ -296,15 +297,20 @@ var campsMixer = mixitup('#mixitup-gallery', {
   $(".single-carousel").owlCarousel({
     items: 1,
     loop:true,
-    nav: true
+    nav: true,
   })
 
   $(".mid-carousel").owlCarousel({
     items: 2,
     loop:true,
     center: true,
-    margin:200,
-    nav: true
+    margin:75,
+    nav: true,
+    responsive : {
+      1200 : {
+          margin:200,
+      }
+    }
   })
 
   $(".research_carousel").owlCarousel({

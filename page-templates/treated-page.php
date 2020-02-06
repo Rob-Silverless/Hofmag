@@ -15,7 +15,7 @@ get_header();?>
 <section class="section">
 	<div class="container conditions cols-24 mr1 ml1 mb1 pb1 pt1" id="mixitup-gallery">
 		<div class="col mixitup-gallery">
-			<div class="sticky">
+			<div class="mb1">
 		    	<div class="filter">
 				    <div>
 					    <fieldset>
@@ -52,7 +52,7 @@ get_header();?>
 		    </div>
 		     <div class="col-12 col-lg-8 col-xl-9 order-content">
 				
-				<div class="gallery" data-ref="mixitup-container">
+				<div data-ref="mixitup-container">
 					
 			    <?php foreach($conditions as &$condition):
 				    
@@ -61,10 +61,15 @@ get_header();?>
 			     ?>
 				
 				<div class="condition-item mix <?php echo $className; ?> section section__light-grey pb4 pt4 pr8 pl8 mb1" data-ref="mixitup-target">
-					<div class="container cols-8-16">
+					<div class="container cols-8-16 grid-gap">
 						<div class="col">
 							<h4 class="heading heading__brand-color heading__sm font400"><?php echo $condition["title"]; ?></h4>
 							<div><?php echo $condition["description"]; ?></div>
+						</div>
+						<div class="col">
+							<div><?php echo $condition["content"]; ?></div>
+							<div><?php echo $condition["additional_content"]; ?></div>
+							<a class="read-more" href="#">Read More</a>
 						</div>
 					</div>
 				</div>

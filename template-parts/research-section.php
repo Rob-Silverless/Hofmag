@@ -7,7 +7,7 @@
 			<img src="<?php echo esc_url($image['url']); ?>" style="max-width:3rem"/>
 		</div>
 	</div>
-	<div class="container cols-4-8-8 grid-gap">
+	<div class="container cols-4-8-8 cols-xl-2-10-10 grid-gap">
 		<div class="col"></div>
 		<div class="col align-right">
 			<h5 class="heading heading__lg heading__thin heading__alt-color"><?php the_sub_field('title');?></h5>
