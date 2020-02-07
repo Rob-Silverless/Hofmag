@@ -61,7 +61,7 @@ get_header();?>
 			     ?>
 				
 				<div class="condition-item mix <?php echo $className; ?> section section__light-grey pb4 pt4 pr8 pl8 mb1" data-ref="mixitup-target">
-					<div class="container cols-8-16 grid-gap">
+					<div class="container cols-8-16 grid-gap cols-lg-24">
 						<div class="col">
 							<h4 class="heading heading__brand-color heading__sm font400"><?php echo $condition["title"]; ?></h4>
 							<div><?php echo $condition["description"]; ?></div>

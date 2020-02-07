@@ -13,6 +13,9 @@ input{
 		color: white;
 	}
 }
+.show-sm{
+	display: none;
+}
 .mt-10{
 	margin-top:-10rem
 }
@@ -111,6 +114,8 @@ input{
 		ul{
 			li{
 				display: inline-block;
+				opacity: 0;
+	            transform:translateY(-10px);
 				&:nth-of-type(odd){
 					width: 39%
 				}
@@ -140,6 +145,21 @@ input{
 			}
 		}
 	}
+	&__list-slide-up{
+		ul{
+			li{
+				opacity: 1;
+	            transform:translateY(0);
+	            transition:$slowEffect;
+	            transition-delay: 1.6; 
+	            @for $i from 1 to 20 {
+	                &:nth-of-type(#{$i}) { 
+	                    transition-delay: 1.6 + ($i * 0.4s); 
+	                }
+	            }
+			}
+		}
+	}
 }
 .border{
 	border-width: 1px;
@@ -161,6 +181,11 @@ nav{
     	&:hover{
     		border: 2px solid $brand-light-grey;
     		transition: $fastEffect;
+    	}
+    }
+    #logo{
+    	&:hover{
+    		border: 0px solid transparent;
     	}
     }
 }
@@ -224,6 +249,9 @@ nav{
 				z-index: 1;
 			}
 		}
+		&:after{
+			display:none;
+		}
 		&__content{
 			position:relative;
 			z-index: 2;
@@ -242,6 +270,23 @@ nav{
 			color:white;
 		}
 	}
+	&__dark{
+		position:relative;
+		.overlay-override{
+			z-index: 2;
+			position:relative;
+		}
+		&:after{
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background: linear-gradient(90deg, rgba(237,237,237,0.9) 0%, rgba(white,0.8) 22%, rgba(white,0.8) 78%, rgba(237,237,237,0.9) 100%);
+			content: '';
+			z-index: 1;
+		}
+	}
 	&__features{
 		display:flex;
 		justify-content: space-around;
@@ -250,6 +295,7 @@ nav{
 }
 .image-overlap{
 	position: relative;
+	z-index: 3;
 	div{
 		position:absolute;
 		background-size: contain;
@@ -281,10 +327,16 @@ nav{
 		}
 	}
 }
+.mid-carousel-container{
+	overflow: hidden;
+}
 .mid-carousel{
+	.owl-stage-outer{
+		overflow: visible;
+	}
 	.owl-nav{
-		width:rem-calc(600);
-		left:calc(50% - 300px);
+		width:rem-calc(500);
+		left:calc(50% - 250px);
 		.owl-next, .owl-prev{
 			&::before{
 				background-color:white !important;
@@ -316,7 +368,9 @@ nav{
 			background-color:$brand-secondary;
 			color:white;
 			.button{
-
+				position:absolute;
+				bottom:2em;
+				left: 2em;
 			}
 		}
 	}
@@ -360,6 +414,11 @@ nav{
 			order:1;
 		}
 	}
+	@for $i from 1 to 20 {
+        &:nth-of-type(#{$i}) { 
+            transition-delay: 0.4 + ($i * 0.4s); 
+        }
+    }
 }
 .features{
 	&__number{
@@ -431,6 +490,15 @@ nav{
 		width:100%;
 	}
 }
+.benefit{
+	&__content{
+		@for $i from 1 to 20 {
+	        &:nth-of-type(#{$i}) { 
+	            transition-delay: 0.1 + ($i * 0.4s); 
+	        }
+	    }
+	}
+}
 
 .accordion{
 	&__triangle{
@@ -489,6 +557,11 @@ nav{
 	}
 	p{
 		margin-top:0;
+	}
+}
+.buy-now-section{
+	img{
+		max-width: rem-calc(350)
 	}
 }
 /*===========FOOTER==========*/

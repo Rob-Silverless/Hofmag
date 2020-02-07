@@ -11,7 +11,7 @@
 
 	<div class="socket">
 
-		<div class="container fullwidth cols-4-16-4 cols-sm text-center-sm">
+		<div class="container fullwidth cols-4-16-4 cols-sm-24-24-24 cols-sm text-center-sm">
 
 			<div class="col colophon">
 				<?php if( have_rows('footer_details', 'options') ):
@@ -23,7 +23,7 @@
 	    		<?php endwhile; endif;?>
 			</div>
 
-			<div class="col mandatory">
+			<div class="col mandatory align-sm-center">
 				<div>
 					Hofmeir Magnetics. Ges.m.b.H &copy; <?php echo date ('Y');?> All Rights Reserved
 

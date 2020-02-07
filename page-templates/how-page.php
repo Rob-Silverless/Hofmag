@@ -13,14 +13,14 @@ get_header();?>
 <?php if( have_rows('introduction') ):
     while( have_rows('introduction') ): the_row(); ?>
 <section class="section section__mid-grey-opacity mr1 ml1 mb1">
-	<div class="container cols-14-10 grid-gap">
-		<div class="col pt5 pb5 pr1">
+	<div class="container cols-14-10 cols-xl-24 grid-gap">
+		<div class="col pt5 pb5 pr1 align-xl-center slide-up">
 			<h5 class="heading heading__caps heading__thin heading__md"><?php the_sub_field('title')?></h5>
 			<div>
 				<?php the_sub_field('content')?>
 			</div>
 		</div>
-		<div class="col image-overlap">
+		<div class="col image-overlap slow-fade delay">
 			<?php
 				$image = get_sub_field('image');
 			?>
@@ -37,7 +37,7 @@ get_header();?>
 <section class="section section__light-grey mr1 ml1 mb1">
 	<div class="container pt10 pb3 cols-24 align-center">
 		<div class="col">
-			<h3 class="heading heading__caps heading__thin heading__lg"><?php the_sub_field('title')?></h3>
+			<h3 class="heading heading__caps heading__thin heading__lg slide-up"><?php the_sub_field('title')?></h3>
 		</div>
 	</div>
 	<div class="container cols-24 pb5">
@@ -47,7 +47,7 @@ get_header();?>
 		   			<?php
 						$image = get_sub_field('image');
 					?>
-		   			<div class="effective-content section section__white mb2">
+		   			<div class="effective-content section section__white mb2 slow-fade">
 		   				<div class="effective-content__content pb3 pt3 pr7 pl7">
 		   					<h5 class="heading heading__md heading__brand-color"><?php the_sub_field('title')?></h5>
 		   					<div><?php the_sub_field('content')?></div>

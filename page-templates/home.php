@@ -14,10 +14,10 @@ get_header();?>
     while( have_rows('introduction') ): the_row(); ?>
 <section class="section section__mid-grey-opacity mr1 ml1 mb1">
 	<div class="container cols-14-10 cols-xl-24">
-		<div class="col pt10 pb10 align-xl-center">
+		<div class="col pt10 pb10 align-xl-center slide-up">
 			<h3 class="heading heading__caps heading__thin heading__lg"><?php the_sub_field('text')?></h3>
 		</div>
-		<div class="col image-overlap align-xl-center">
+		<div class="col image-overlap align-xl-center slow-fade delay">
 			<?php
 				$image = get_sub_field('image');
 			?>
@@ -36,7 +36,7 @@ get_header();?>
 <section class="section section__light-grey mr1 ml1 mb1 pt5 pb5">
 	<div class="container cols-24">
 		<div class="col align-center pb5">
-			<h3 class="heading heading__caps heading__thin heading__lg"><?php the_sub_field('title')?></h3>
+			<h3 class="heading heading__caps heading__thin heading__lg slide-up"><?php the_sub_field('title')?></h3>
 		</div>
 	</div>
 	<?php if( have_rows('carousel_container') ):
@@ -49,7 +49,7 @@ get_header();?>
 						<?php
 							$image = get_sub_field('image');
 						?>
-					<div class="container cols-12 cols-xl-14-10 single-carousel-item">
+					<div class="container cols-12 cols-xl-14-10 cols-sm-24 single-carousel-item">
 						<div class="col section section__white pt5 pl5 pr10 pb5">
 							<h4 class="heading heading__brand-color heading__md"><?php the_sub_field('title');?></h4>
 							<p><?php the_sub_field('content');?></p>
@@ -78,10 +78,10 @@ get_header();?>
 			$image = get_sub_field('image');
 		?>
 <section class="section mr1 ml1 mb1 pt1 how">
-	<div class="container cols-offset-6-12">
+	<div class="container cols-offset-6-12 cols-offset-sm-2-20">
 		<div class="col align-center pb3">
-			<h3 class="heading heading__lg heading__thin"><?php the_sub_field('title');?></h3>
-			<div><?php the_sub_field('content');?></div>
+			<h3 class="heading heading__lg heading__thin slide-up"><?php the_sub_field('title');?></h3>
+			<div class="slow-fade delay"><?php the_sub_field('content');?></div>
 		</div>
 	</div>
 	<div class="align-center pt20 pb5 bgImage bgImage__norepeat bgImage__cover how-image" style="background-image: url('<?php echo esc_url($image['url']); ?>');">
@@ -106,14 +106,14 @@ get_header();?>
 
 <?php if( have_rows('conditions_section') ):
     while( have_rows('conditions_section') ): the_row(); ?>
-<section class="section section__mid-grey-opacity mr1 ml1 mb1 pt5 pb5">
-	<div class="container cols-offset-6-12">
+<section class="section section__mid-grey-opacity mr1 ml1 mb1 pt5 pb5 conditions-container">
+	<div class="container cols-offset-6-12 cols-offset-sm-1-22">
 		<div class="col align-center pb3">
-			<h3 class="heading heading__lg heading__thin"><?php the_sub_field('title');?></h3>
-			<div><?php the_sub_field('content');?></div>
+			<h3 class="heading heading__lg heading__thin slide-up"><?php the_sub_field('title');?></h3>
+			<div class="slow-fade delay"><?php the_sub_field('content');?></div>
 		</div>
 	</div>
-	<div class="container cols-6 grid-gap">
+	<div class="container cols-6 cols-sm-24 grid-gap">
 		<?php if( have_rows('conditions') ):
     		while( have_rows('conditions') ): the_row(); ?>
     		<?php
@@ -123,12 +123,12 @@ get_header();?>
     			<div>
     				<img src="<?php echo esc_url($image['url']); ?>"/>
     			</div>
-    			<h5 class="heading heading__sm heading__thin mt2"><?php the_sub_field('title');?></h5>
+    			<h5 class="heading heading__sm heading__thin mt2 mb3"><?php the_sub_field('title');?></h5>
     		</div>
     	<?php endwhile; endif;?>
 	</div>
-	<div class="align-center pt5">
-		<a class="button pr3 pl3 pt1 pb1 button__secondary button__color-white button__caps button__hover-primary button__hover-text-white">Learn More</a>
+	<div class="align-center pt2">
+		<a class="button pr3 pl3 pt1 pb1 button__secondary button__color-white button__caps button__hover-primary button__hover-text-white" href="<?php the_sub_field('link');?>">Learn More</a>
 	</div>
 </section>
 <?php endwhile; endif;?>
@@ -141,28 +141,32 @@ get_header();?>
 <?php if( have_rows('efficacy_section') ):
     while( have_rows('efficacy_section') ): the_row(); ?>
 <section class="section section__light-grey mr1 ml1 mb1 pb5 pt5">
-	<div class="container cols-offset-6-12">
+	<div class="container cols-offset-6-12 cols-offset-sm-2-20">
 		<div class="col align-center">
-			<h3 class="heading heading__thin heading__lg"><?php the_sub_field('mid_car_title');?></h3>
-			<div><?php the_sub_field('mid_car_content');?></div>
+			<h3 class="heading heading__thin heading__lg slide-up"><?php the_sub_field('mid_car_title');?></h3>
+			<div class="slow-fade delay"><?php the_sub_field('mid_car_content');?></div>
 		</div>
 	</div>
 	<?php if( have_rows('mid_car_carousel') ): ?>
-		<div class="owl-carousel owl-theme mid-carousel mt2">
-    	<?php while( have_rows('mid_car_carousel') ): the_row(); ?>
-    		<?php
-				$image = get_sub_field('image');
-			?>
-			<div class="item pr2" style="background-image: url('<?php echo esc_url($image['url']); ?>');">
-				<div class="content-container pb2 pt2 pr2 pl2">
-					<h6 class="heading heading__sm heading__light heading__thin pb1 mb1"><?php the_sub_field('title');?></h6>
-					<div><?php the_sub_field('content');?></div>
-					<div>
-						<a class="button pr3 pl3 pt1 pb1 button__white button__color-secondary button__caps button__hover-primary button__hover-text-white">Learn More</a>
+		<div class="mid-carousel-container">
+			<div class="container cols-24 ">
+				<div class="owl-carousel owl-theme mid-carousel mt2 col">
+		    	<?php while( have_rows('mid_car_carousel') ): the_row(); ?>
+		    		<?php
+						$image = get_sub_field('image');
+					?>
+					<div class="item pr2 slide-up" style="background-image: url('<?php echo esc_url($image['url']); ?>');">
+						<div class="content-container pb2 pt2 pr2 pl2">
+							<h6 class="heading heading__sm heading__light heading__thin pb1 mb1"><?php the_sub_field('title');?></h6>
+							<div><?php the_sub_field('content');?></div>
+							<div>
+								<a class="button pr3 pl3 pt1 pb1 button__white button__color-secondary button__caps button__hover-primary button__hover-text-white">Learn More</a>
+							</div>
+						</div>
 					</div>
+				<?php endwhile; ?>
 				</div>
 			</div>
-		<?php endwhile; ?>
 		</div>
 	<?php endif;?>
 </section>

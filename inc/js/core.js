@@ -301,14 +301,20 @@ var campsMixer = mixitup('#mixitup-gallery', {
   })
 
   $(".mid-carousel").owlCarousel({
-    items: 2,
+    items: 1,
     loop:true,
     center: true,
     margin:75,
     nav: true,
+    autoplay: true,
+    autoplaySpeed: 500,
+    autoplayTimeout: 8000,
     responsive : {
+      768 : {
+          autoplay: false,
+      },
       1200 : {
-          margin:200,
+          items: 2,
       }
     }
   })
