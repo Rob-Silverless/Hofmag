@@ -28,10 +28,20 @@
 <body <?php body_class(); ?>>
 
 	<div id="page" class="site-wrapper">
-
-        <header>
-        	<nav id="nav">
-		        <div class="container fullwidth grid-gap cols-4-16-4 align-vert-c ">
+		<?php
+		if( get_field('header_colour') == 'black' ):
+			$theme = "nav__dark";
+		elseif( get_field('header_colour') == 'white' ):
+			$theme = "nav__light";
+		endif;?>
+        <header class="<?php if (is_page_template('page-templates/stables.php')) {?>scrolled-nav<?php }?>">
+        	<div class="mobileMenu">
+            	<span></span>
+            	<span></span>
+            	<span></span>
+            </div>
+        	<nav id="nav" class="<?php echo $theme;?> ">
+		        <div class="container fullwidth grid-gap cols-4-16-4  cols-md-24 align-vert-c ">
 		            <div class="col" id="logo">
 		            	<a href="<?php echo get_home_url(); ?>">
 		                   <?php get_template_part("inc/img/logo"); ?>

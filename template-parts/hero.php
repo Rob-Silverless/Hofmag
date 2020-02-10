@@ -1,7 +1,7 @@
 <?php
-if( get_field('hero_colour_theme') == 'dark' ):
+if( get_field('header_colour') == 'black' ):
 	$theme = "hero__dark";
-elseif( get_field('hero_colour_theme') == 'light' ):
+elseif( get_field('header_colour') == 'white' ):
 	$theme = "hero__light";
 endif;?>
 
@@ -9,7 +9,7 @@ endif;?>
 <?php
 if( get_field('hero_type') == 'image' ):
 	$heroImage = get_field('hero_background_image');?>
-<div class="hero mb1 mt1 ml1 mr1 <?php the_field('hero_height');?> <?php echo $theme;?>" style="background-image: url(<?php echo $heroImage['url']; ?>);">
+<div class="hero mb1 mt1 ml1 mr1 <?php the_field('hero_height');?> <?php echo $theme;?> <?php if (is_page_template('page-templates/home.php')) {?>home_hero<?php }?>" style="background-image: url(<?php echo $heroImage['url']; ?>);">
 
     <div class="container cols-14 cols-sm-24 pt15 pb5 overlay-override">
 		<div class="col">
@@ -31,7 +31,7 @@ if( get_field('hero_type') == 'image' ):
 <?php elseif ( get_field('hero_type') == 'color' ):
 	$heroColor = get_field('hero_background_colour');?>
 
-<div class="hero mb1 mt1 ml1 mr1 <?php the_field('hero_height');?> <?php echo $theme;?>" style="background-color: url(<?php echo $heroColor; ?>);">
+<div class="hero mb1 mt1 ml1 mr1 <?php the_field('hero_height');?> <?php echo $theme;?> <?php if (is_page_template('page-templates/home.php')) {?>home_hero<?php }?>" style="background-color: url(<?php echo $heroColor; ?>);">
 
     <div class="container cols-14 pt15 pb5 overlay-override">
 		<div class="col">
@@ -53,7 +53,7 @@ if( get_field('hero_type') == 'image' ):
 elseif( get_field('hero_type') == 'headingimage' ):
 	$heroImage = get_field('hero_background_image');?>
 
-<div class="hero hero__heading-image mb1 mt1 ml1 mr1 align-vert-c <?php the_field('hero_height');?> <?php echo $theme;?>" style="background-image: url(<?php echo $heroImage['url']; ?>);">
+<div class="hero hero__heading-image mb1 mt1 ml1 mr1 align-vert-c <?php the_field('hero_height');?> <?php echo $theme;?> <?php if (is_page_template('page-templates/home.php')) {?>home_hero<?php }?>" style="background-image: url(<?php echo $heroImage['url']; ?>);">
 
     <div class="container cols-12 cols-sm-24 align-sm-center overlay-override">
 		<div class="col">
@@ -71,7 +71,7 @@ elseif( get_field('hero_type') == 'headingimage' ):
 elseif( get_field('hero_type') == 'halfimage' ):
 	$heroImage = get_field('hero_background_image');?>
 
-<div class="hero hero__halfimage mb1 mt1 ml1 mr1 <?php the_field('hero_height');?> <?php echo $theme;?>">
+<div class="hero hero__halfimage mb1 mt1 ml1 mr1 <?php the_field('hero_height');?> <?php echo $theme;?> <?php if (is_page_template('page-templates/home.php')) {?>home_hero<?php }?>">
 	<div class="hero__halfimage__background" style="background-image: url(<?php echo $heroImage['url']; ?>);">
 		<div class="hero__halfimage__quote pr3 pb2 heading heading__md align-right slow-fade delay hide-xl">
         	<?php the_field('quote');?>

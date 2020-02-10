@@ -135,7 +135,7 @@ jQuery(document).ready(function($) {
     );
   };
 
-  $(".slide-up, .slide-down, .slide-right, .slow-fade").each(function() {
+  $(".slide-up, .slide-down, .slide-right, .slow-fade, .col__circle-list ul li").each(function() {
     if ($(this).isOnScreen()) {
       $(this).addClass("active");
     }
@@ -152,7 +152,7 @@ jQuery(document).ready(function($) {
   };
 
   $(window).on("resize scroll", function() {
-    $(".slide-up, .slide-down, .slide-right, .slow-fade").each(function() {
+    $(".slide-up, .slide-down, .slide-right, .slow-fade, .col__circle-list ul li").each(function() {
       if ($(this).isInViewport()) {
         $(this).addClass("active");
       }
@@ -286,7 +286,7 @@ var campsMixer = mixitup('#mixitup-gallery', {
   //Mobile Menu
 
   $(".mobileMenu").click(function() {
-    $("nav").slideToggle(300);
+    $(".mainMenu").slideToggle(300);
   });
 
   var navHeight = $("header").height();

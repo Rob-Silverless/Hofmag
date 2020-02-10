@@ -115,13 +115,21 @@ input{
 			li{
 				display: inline-block;
 				opacity: 0;
-	            transform:translateY(-10px);
+				transition:opacity 3s ease;
 				&:nth-of-type(odd){
 					width: 39%
 				}
 				&:nth-of-type(even){
 					width: 60%
 				}
+				&.active{
+					opacity: 1;
+				}
+				@for $i from 1 to 20 {
+			        &:nth-of-type(#{$i}) { 
+			            transition-delay: 0.2 + ($i * 0.3s); 
+			        }
+			    }
 			}
 		}
 	}
@@ -142,21 +150,6 @@ input{
 					border:2px solid $brand-primary;
 					border-radius:50%;
 				}
-			}
-		}
-	}
-	&__list-slide-up{
-		ul{
-			li{
-				opacity: 1;
-	            transform:translateY(0);
-	            transition:$slowEffect;
-	            transition-delay: 1.6; 
-	            @for $i from 1 to 20 {
-	                &:nth-of-type(#{$i}) { 
-	                    transition-delay: 1.6 + ($i * 0.4s); 
-	                }
-	            }
 			}
 		}
 	}
@@ -183,9 +176,23 @@ nav{
     		transition: $fastEffect;
     	}
     }
+    &.nav__light{
+    	a{
+    		color: white;
+    	}
+    }
     #logo{
-    	&:hover{
-    		border: 0px solid transparent;
+    	a{
+    		&:hover{
+	    		border: 2px solid transparent;
+	    	}
+    	}
+    }
+    .buy-now-mob{
+    	display: none;
+    	background-color:$brand-primary;
+    	a{
+    		color:white !important;
     	}
     }
 }
@@ -207,8 +214,38 @@ nav{
 		}
 	}
 }
-
+.scrolled-nav{
+	background-color:white;
+	nav{
+        padding-top:0.5em;
+        padding-bottom:0.5em;
+        .buy-now{
+            a{
+                margin-top: -46px;
+            }
+        }
+    }
+}
+.mobileMenu{
+	display: none;
+	position:absolute;
+	right: rem-calc(20);
+	top: rem-calc(15);
+	span{
+		display: block;
+		margin: rem-calc(5) auto;
+		height: rem-calc(3);
+		width:rem-calc(25);
+		background-color:$brand-primary;
+	}
+	&:hover{
+		cursor: pointer;
+	}
+}
 /*===========BODY==========*/
+.home_hero{
+	background-size:contain !important;
+}
 .hero{
 	&.h100{
 		height: calc(100vh - 2em);
@@ -431,10 +468,29 @@ nav{
 		text-align:center;
 		padding-top:rem-calc(4);
 		border:2px solid white;
+		animation-name: pulse;
+  		animation-duration: 1.5s;
+  		@for $i from 1 to 20 {
+	  		&:nth-of-type(#{$i}){
+	            animation-delay: 2 + ($i * 2s);
+	        }
+	    }
 	}
-	&__image{
+	&__image-container{
 		position:relative;
 	}
+}
+.feature__container{
+	@for $i from 1 to 20 {
+        &:nth-of-type(#{$i}) { 
+            transition-delay: 0.2 + ($i * 0.2s); 
+            
+        }
+        &:nth-of-type(#{$i}) .features__number{
+            animation-delay: 2 + ($i * 2s);
+        }
+    }
+
 }
 
 .research_content{
@@ -500,6 +556,21 @@ nav{
 	}
 }
 
+.core-benefits{
+	@for $i from 1 to 20 {
+        &:nth-of-type(#{$i}) { 
+            transition-delay: 0.1 + ($i * 0.4s); 
+        }
+    }
+}
+.for-section{
+	@for $i from 1 to 20 {
+        &:nth-of-type(#{$i}) { 
+            transition-delay: 0.1 + ($i * 0.4s); 
+        }
+    }
+}
+
 .accordion{
 	&__triangle{
 		position:relative;
@@ -540,7 +611,7 @@ nav{
 	flex-direction:column;
 	justify-content:flex-end;
 	position:relative;
-	&:after{
+	&:before{
 		position:absolute;
 		right:0;
 		top:0;
@@ -568,4 +639,30 @@ nav{
 
 .footerMenu{
 	display:inline-block;
+	ul{
+		li{
+			display:inline-block;
+			padding-left:0.5em;
+			padding-right:0.8em;
+			position:relative;
+			&:after{
+				content: '';
+				height: rem-calc(10);
+				width: 1px;
+				display: inline-block;
+				background-color:white;
+				position:absolute;
+				right: 0;
+				top:rem-calc(3);
+			}
+			&:first-of-type{
+				padding-left:0;
+			}
+			&:last-of-type{
+				&:after{
+					display: none;
+				}
+			}
+		}
+	}
 }

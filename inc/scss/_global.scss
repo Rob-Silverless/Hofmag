@@ -488,6 +488,11 @@ nav {
                 }
             }
         }
+        &.nav__light{
+            a{
+                color: $brand-mid-grey;
+            }
+        }
     }
 }
 

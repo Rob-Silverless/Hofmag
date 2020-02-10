@@ -7,30 +7,32 @@
 get_header();?>
 <?php if( have_rows('hero_section') ):
 	while( have_rows('hero_section') ): the_row(); ?>
-<section class="hero section mb1 ml1 mr1 pt2 pb2 h100">
-	<div class="container cols-12 align-vert-stretch">
+<section class="hero section mb1 ml1 mr1 pt2 pb2 h100 features-page">
+	<div class="container cols-12 cols-sm-24 align-vert-c">
 		<div class="col pt7 hero__features" >
-			<h1 class="heading heading__xl heading__thin"><?php the_sub_field('title');?></h1>
+			<h1 class="heading heading__xl heading__thin slide-up pb1"><?php the_sub_field('title');?></h1>
 			<div>
-				<h5 class="heading heading__xs heading__capitalize heading__brand-color pb1 font400"><?php the_sub_field('feature_title');?></h5>
+				<h5 class="heading heading__xs heading__capitalize heading__brand-color pb1 font400 slow-fade"><?php the_sub_field('feature_title');?></h5>
 				<?php if( have_rows('features') ):
 					while( have_rows('features') ): the_row(); ?>
-						<div class="heading heading__xxs heading__caps heading__thin pb1">
+						<div class="heading heading__xxs heading__caps heading__thin pb1 slide-up feature__container">
 							<span class="features__number mr2"><?php the_sub_field('number');?></span>
 							<?php the_sub_field('title');?>
 						</div>
 				<?php endwhile; endif;?>
 			</div>
 		</div>
-		<div class="col pt7 features__image">
+		<div class="col pt7 features__image slow-fade delay">
 			<?php
 				$image = get_sub_field('image');
 			?>
-			<img src='<?php echo esc_url($image['url']); ?>'/>
-			<?php if( have_rows('features') ):
-				while( have_rows('features') ): the_row(); ?>
-					<span class="features__number" style="position: absolute; top: <?php the_sub_field('y_axis_location');?>%; left: <?php the_sub_field('x_axis_location');?>%"><?php the_sub_field('number');?></span>
-			<?php endwhile; endif;?>
+			<div class="features__image-container">
+				<img src='<?php echo esc_url($image['url']); ?>'/>
+				<?php if( have_rows('features') ):
+					while( have_rows('features') ): the_row(); ?>
+						<span class="features__number" style="position: absolute; top: <?php the_sub_field('y_axis_location');?>%; left: <?php the_sub_field('x_axis_location');?>%"><?php the_sub_field('number');?></span>
+				<?php endwhile; endif;?>
+			</div>
 		</div>
 	</div>
 </section>
@@ -43,13 +45,13 @@ get_header();?>
 <section class="section mb1 ml1 mr1 pt2 pb2">
 	<div class="container cols-24">
 		<div class="col align-center">
-			<h2 class="heading heading__thin heading__lg pb2"><?php the_sub_field('title');?></h2>
+			<h2 class="heading heading__thin heading__lg pb2 slide-up"><?php the_sub_field('title');?></h2>
 		</div>
 	</div>
-	<div class="container cols-8 grid-gap">
+	<div class="container cols-8 cols-offset-lg-4-16 align-lg-center grid-gap">
 		<?php if( have_rows('benefit') ):
 			while( have_rows('benefit') ): the_row(); ?>
-				<div class="col">
+				<div class="col slide-up core-benefits">
 					<?php
 						$image = get_sub_field('image');
 					?>
@@ -73,12 +75,12 @@ get_header();?>
 			$image = get_sub_field('image');
 		?>
 <section class="section section__light-grey mb1 ml1 mr1 pt2 pb2">
-	<div class="container cols-6-16 grid-gap pb1 pt1">
-		<div class="col align-center pl1 pr1">
+	<div class="container cols-6-16 cols-sm-24 align-sm-center grid-gap pb1 pt1">
+		<div class="col align-center pl1 pr1 slow-fade delay">
 			<img src='<?php echo esc_url($image['url']); ?>'/>
 		</div>
-		<div class="col">
-			<h4 class="heading heading__lg heading__brand-color"><?php the_sub_field('title');?></h4>
+		<div class="col slide-up">
+			<h4 class="heading heading__lg heading__brand-color "><?php the_sub_field('title');?></h4>
 			<div>
 				<?php the_sub_field('content');?>
 			</div>
@@ -96,12 +98,12 @@ get_header();?>
 	<div class="container cols-24">
 		<div class="col border border__brand-primary pb2 pt2 pr2 pl2">
 			<h4 class="heading heading__md heading__brand-color"><?php the_sub_field('title');?></h4>
-			<div class="container cols-8">
+			<div class="container cols-8 cols-sm-24">
 				<div class="col">
 					<?php the_sub_field('content');?>
 				</div>
 			</div>
-			<div class="container cols-12 grid-gap">
+			<div class="container cols-12  cols-sm-24 grid-gap">
 				<?php if( have_rows('certificate') ):
 					while( have_rows('certificate') ): the_row(); ?>
 						<div class="col">
@@ -200,7 +202,7 @@ get_header();?>
 
 
 <section class="section mb1 ml1 mr1 pt2 pb2">
-	<div class="container cols-12 grid-gap">
+	<div class="container cols-12 grid-gap cols-offset-lg-4-16 cols-sm-24">
 		<?php if( have_rows('faqs_section') ):
 		while( have_rows('faqs_section') ): the_row(); ?>
 			<div class="col">
@@ -257,10 +259,10 @@ get_header();?>
 <?php if( have_rows('hofmag_for_section') ):
 	while( have_rows('hofmag_for_section') ): the_row(); ?>
 <section class="section mb1 ml1 mr1 pt2 pb2">
-	<div class="container cols-12 grid-gap">
+	<div class="container cols-12 cols-offset-lg-4-16 cols-sm-24 grid-gap">
 		<?php if( have_rows('for_block') ):
 			while( have_rows('for_block') ): the_row(); ?>
-				<div class="col">
+				<div class="col slow-fade for-section">
 					<div class="border border__brand-primary align-center pb2 pt2 pl2 pr2">
 						<h5 class="heading heading__md heading__brand-color pb1"><?php the_sub_field('title')?></h5>
 						<div><?php the_sub_field('content');?></div>
