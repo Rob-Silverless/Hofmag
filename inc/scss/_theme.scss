@@ -492,6 +492,11 @@ nav{
     }
 
 }
+.doc_icon{
+	svg{
+		max-height: 2.5em;
+	}
+}
 
 .research_content{
 	column-count: 3;
@@ -553,6 +558,9 @@ nav{
 	            transition-delay: 0.1 + ($i * 0.4s); 
 	        }
 	    }
+	    img{
+	    	max-width: 3em;
+	    }
 	}
 }
 
@@ -601,7 +609,7 @@ nav{
 
 .social{
 	img{
-		height: rem-calc(32);
+		height: 1.5em;
 	}
 }
 

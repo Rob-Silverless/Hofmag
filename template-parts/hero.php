@@ -13,7 +13,7 @@ if( get_field('hero_type') == 'image' ):
 
     <div class="container cols-14 cols-sm-24 pt15 pb5 overlay-override">
 		<div class="col">
-            <h1 class="heading heading__xl font400 slide-up align-sm-center">
+            <h1 class="heading heading__xl font400 slide-up">
             	<?php the_field('hero_heading');?>
             </h1>
 		</div>
@@ -55,7 +55,7 @@ elseif( get_field('hero_type') == 'headingimage' ):
 
 <div class="hero hero__heading-image mb1 mt1 ml1 mr1 align-vert-c <?php the_field('hero_height');?> <?php echo $theme;?> <?php if (is_page_template('page-templates/home.php')) {?>home_hero<?php }?>" style="background-image: url(<?php echo $heroImage['url']; ?>);">
 
-    <div class="container cols-12 cols-sm-24 align-sm-center overlay-override">
+    <div class="container cols-12 cols-sm-24 overlay-override">
 		<div class="col">
             <h1 class="heading heading__xl font400 slide-up">
             	<?php the_field('hero_heading');?>
@@ -78,7 +78,7 @@ elseif( get_field('hero_type') == 'halfimage' ):
         	<span class="heading heading__sm heading__light heading__caps font400"><?php the_field('credit');?></span>
         </div>
 	</div>
-	<div class="container cols-14 cols-lg-18 cols-sm-24 align-sm-center">
+	<div class="container cols-14 cols-lg-18 cols-sm-24">
 		<div class="col hero__halfimage__content pb2 pt2 pr2 overlay-override slide-up">
             <h1 class="heading heading__xl heading__grey-color font400">
             	<?php the_field('hero_heading');?>

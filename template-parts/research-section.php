@@ -7,10 +7,10 @@
 			<img src="<?php echo esc_url($image['url']); ?>" style="max-width:3rem" class="slow-fade"/>
 		</div>
 	</div>
-	<div class="container cols-4-8-8 cols-xl-2-10-10 cols-sm-24-24-24 grid-gap align-sm-center">
+	<div class="container cols-4-8-8 cols-xl-2-10-10 cols-sm-24-24-24 grid-gap align-sm-left">
 		<div class="col"></div>
-		<div class="col align-right align-sm-center">
-			<h5 class="heading heading__lg heading__thin heading__alt-color slide-up delay"><?php the_sub_field('title');?></h5>
+		<div class="col align-right align-sm-left">
+			<h5 class="heading heading__lg heading__thin heading__alt-color slide-up delay align-sm-left"><?php the_sub_field('title');?></h5>
 		</div>
 		<div class="col">
 			<p class="mt0 primary-color slide-up delay"><?php the_sub_field('content');?></p>

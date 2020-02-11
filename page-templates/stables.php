@@ -23,7 +23,7 @@ get_header();?>
                             $image = get_sub_field('image');
                         ?>
     					<div class="container cols-4-20 cols-sm-24 grid-gap pb3 slow-fade benefit__content">
-    						<div class="col">
+    						<div class="col align-right">
                                 <img src="<?php echo $image['url']; ?>"/>
     						</div>
     						<div class="col">

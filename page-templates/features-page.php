@@ -234,8 +234,8 @@ get_header();?>
 						$filesize = $file['filesize'];
 						$filesize = size_format($filesize, 2);
 					?>
-					<div class="container cols-3-21 grid-gap pb1 align-vert-c">
-						<div class="col">
+					<div class="container cols-3-21 grid-gap pb2 align-vert-c">
+						<div class="col doc_icon">
 							<?php get_template_part("inc/img/pdf-icon"); ?>
 						</div>
 						<div class="col">

@@ -36,6 +36,9 @@
 		.align-#{$name}-center{
 			text-align: center;
 		}
+		.align-#{$name}-left{
+			text-align: left;
+		}
 		.hide-#{$name}{
 			display: none;
 		}
@@ -258,6 +261,9 @@ header{
 	&__xl{
 		font-size:rem-calc(32)
 	}
+	&__lg{
+		font-size:rem-calc(26)
+	}
 }
 .cols-sm-24-24-24{
 	> .col:nth-of-type(3n - 2){
@@ -271,6 +277,18 @@ header{
     }
 }
 /*---HEADER---*/
+#nav{
+	padding-left:1em;
+	padding-right:1em;
+	.container{
+		padding:0;
+	}
+}
+#logo{
+	svg{
+		width: auto;
+	}
+}
 .hero{
 	&__halfimage{
 		&__background{
@@ -326,9 +344,14 @@ header{
 }
  .mid-carousel{
 	.item{
+		height: rem-calc(700);
+		display: flex;
+		align-items:flex-end;
+		width: 100%;
 		.content-container{
-			min-height:100%;
+			position:relative;
 			width: 100%;
+			padding-bottom:rem-calc(200);
 			.heading__sm{
 				font-size:rem-calc(14);
 			}
@@ -389,6 +412,11 @@ header{
 .colophon, .mandatory{
 	margin-bottom:rem-calc(25);
 }
+.mandatory{
+	.divider{
+		display: none;
+	}
+}
 .table_item{
 	display:grid;
 	grid-template-columns:1fr;
@@ -403,6 +431,23 @@ header{
 	}
 	.table_title, .table_content{
 		border-right:0;
+	}
+}
+.footerMenu{
+	display: block;
+
+	ul{
+		li{
+			display: block;
+			text-align: center;
+			a{
+				padding-left:rem-calc(5);
+				padding-top:rem-calc(10);
+			}
+			&:after{
+				display: none;
+			}
+		}
 	}
 }
 }/*---end small mq---*/
