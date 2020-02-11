@@ -156,7 +156,8 @@ header{
 		display: block;	
 	}
 	.mainMenu{
-		display: none;
+		max-height: 0;
+		overflow: hidden;
 		position:absolute;
 		left: 50%;
 		transform: translateX(-50%);
@@ -171,6 +172,10 @@ header{
 				color:$brand-mid-grey;
 			}
 		}
+		&.active{
+			max-height: 75vh;
+			transition: $slowEffect;
+		}
 	}
 	.buy-now{
 		display: none;
@@ -180,7 +185,23 @@ header{
 .mobileMenu{
 	display: block;
 }
+	
 /*---CONTENT---*/
+.home_hero{
+	background-size:cover !important;
+	background-position: 75% center !important;
+	.pt15{
+		padding-top:5em;
+	}
+	.pb5{
+		padding-bottom:2em;
+	}
+	.col__double-list{
+		li{
+			margin-bottom: rem-calc(10);
+		}
+	}
+}
 .mid-carousel{
 	.owl-nav{
 		width:rem-calc(500);

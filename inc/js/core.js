@@ -97,7 +97,6 @@ jQuery(document).ready(function($) {
   $(".read-more").click(function(e) {
     e.preventDefault();
     $(this).prev().slideToggle();
-    console.log('clicked');
   });
 
   $(".tab-trigger").click(function() {
@@ -285,8 +284,13 @@ var campsMixer = mixitup('#mixitup-gallery', {
 
   //Mobile Menu
 
-  $(".mobileMenu").click(function() {
-    $(".mainMenu").slideToggle(300);
+  $(".mobileMenu").on('click', function() {
+    if($(".mainMenu").hasClass('active')){
+      $(".mainMenu").removeClass('active');
+    } else {
+      $(".mainMenu").addClass('active');
+    }
+    
   });
 
   var navHeight = $("header").height();
