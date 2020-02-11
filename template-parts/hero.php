@@ -13,7 +13,7 @@ if( get_field('hero_type') == 'image' ):
 
     <div class="container cols-14 cols-sm-24 pt15 pb5 overlay-override">
 		<div class="col">
-            <h1 class="heading heading__xl font400 slide-up">
+            <h1 class="heading heading__xl font400 slide-up main-heading">
             	<?php the_field('hero_heading');?>
             </h1>
 		</div>

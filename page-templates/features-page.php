@@ -11,7 +11,7 @@ get_header();?>
 	<div class="container cols-12 cols-sm-24 align-vert-c">
 		<div class="col pt7 hero__features" >
 			<h1 class="heading heading__xl heading__thin slide-up pb1"><?php the_sub_field('title');?></h1>
-			<div>
+			<div class="hide-sm">
 				<h5 class="heading heading__xs heading__capitalize heading__brand-color pb1 font400 slow-fade"><?php the_sub_field('feature_title');?></h5>
 				<?php if( have_rows('features') ):
 					while( have_rows('features') ): the_row(); ?>
@@ -22,7 +22,7 @@ get_header();?>
 				<?php endwhile; endif;?>
 			</div>
 		</div>
-		<div class="col pt7 features__image slow-fade delay">
+		<div class="col pt7 p-sm-t2 features__image slow-fade delay">
 			<?php
 				$image = get_sub_field('image');
 			?>
@@ -30,7 +30,7 @@ get_header();?>
 				<img src='<?php echo esc_url($image['url']); ?>'/>
 				<?php if( have_rows('features') ):
 					while( have_rows('features') ): the_row(); ?>
-						<span class="features__number" style="position: absolute; top: <?php the_sub_field('y_axis_location');?>%; left: <?php the_sub_field('x_axis_location');?>%"><?php the_sub_field('number');?></span>
+						<span class="features__number hide-sm" style="position: absolute; top: <?php the_sub_field('y_axis_location');?>%; left: <?php the_sub_field('x_axis_location');?>%"><?php the_sub_field('number');?></span>
 				<?php endwhile; endif;?>
 			</div>
 		</div>
@@ -76,7 +76,7 @@ get_header();?>
 		?>
 <section class="section section__light-grey mb1 ml1 mr1 pt2 pb2">
 	<div class="container cols-6-16 cols-sm-24 align-sm-center grid-gap pb1 pt1">
-		<div class="col align-center pl1 pr1 slow-fade delay">
+		<div class="col align-center pl1 pr1 slow-fade delay warranty p-sm-b1">
 			<img src='<?php echo esc_url($image['url']); ?>'/>
 		</div>
 		<div class="col slide-up">
@@ -145,21 +145,21 @@ get_header();?>
 					<span class="heading heading__brand-color">+</span> <span class="font400"><?php the_sub_field('title');?></span>
 				</div>
 				<div class="table_item pb1">
-					<div class="table_title pl3 pb1">
+					<div class="table_title pl3 pb1 p-sm-l1">
 						<span class="heading heading__brand-color">Setting</span>
 						<span class="heading heading__brand-color">Amps</span>
 					</div>
-					<div class="table_title pl3 pb1">
+					<div class="table_title pl3 pb1 p-sm-l1">
 						<span class="heading heading__brand-color">Setting</span>
 						<span class="heading heading__brand-color">Amps</span>
 					</div>
-					<div class="table_title pl3 pb1">
+					<div class="table_title pl3 pb1 p-sm-l1">
 						<span class="heading heading__brand-color">Setting</span>
 						<span class="heading heading__brand-color">Amps</span>
 					</div>
 					<?php if( have_rows('table') ):
 					while( have_rows('table') ): the_row(); ?>
-					<div class="table_content pl3 pb1">
+					<div class="table_content pl3 pb1 p-sm-l1">
 						<span><?php the_sub_field('setting');?></span>
 						<span><?php the_sub_field('amps_value');?></span>
 					</div>
@@ -234,7 +234,7 @@ get_header();?>
 						$filesize = $file['filesize'];
 						$filesize = size_format($filesize, 2);
 					?>
-					<div class="container cols-3-21 grid-gap pb2 align-vert-c">
+					<div class="container cols-3-21 cols-sm-4-20 grid-gap pb2 align-vert-c documentation">
 						<div class="col doc_icon">
 							<?php get_template_part("inc/img/pdf-icon"); ?>
 						</div>

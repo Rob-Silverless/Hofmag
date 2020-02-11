@@ -245,6 +245,10 @@ nav{
 /*===========BODY==========*/
 .home_hero{
 	background-size:contain !important;
+	.main-heading{
+		word-break: keep-all;
+		max-width: rem-calc(500);
+	}
 }
 .hero{
 	&.h100{
