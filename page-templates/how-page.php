@@ -14,7 +14,7 @@ get_header();?>
     while( have_rows('introduction') ): the_row(); ?>
 <section class="section section__mid-grey-opacity mr1 ml1 mb1">
 	<div class="container cols-14-10 cols-xl-24 grid-gap">
-		<div class="col pt5 pb5 pr1 align-xl-center slide-up">
+		<div class="col pt5 pb5 p-sm-t3 pr1 align-xl-center slide-up">
 			<h5 class="heading heading__caps heading__thin heading__md"><?php the_sub_field('title')?></h5>
 			<div>
 				<?php the_sub_field('content')?>
@@ -35,7 +35,7 @@ get_header();?>
 <?php if( have_rows('effective_treatment_section') ):
     while( have_rows('effective_treatment_section') ): the_row(); ?>
 <section class="section section__light-grey mr1 ml1 mb1">
-	<div class="container pt10 pb3 cols-24 align-center">
+	<div class="container pt10 pb3 p-sm-t3 cols-24 align-center">
 		<div class="col">
 			<h3 class="heading heading__caps heading__thin heading__lg slide-up"><?php the_sub_field('title')?></h3>
 		</div>

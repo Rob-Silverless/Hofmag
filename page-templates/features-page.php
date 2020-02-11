@@ -48,7 +48,7 @@ get_header();?>
 			<h2 class="heading heading__thin heading__lg pb2 slide-up"><?php the_sub_field('title');?></h2>
 		</div>
 	</div>
-	<div class="container cols-8 cols-offset-lg-4-16 align-lg-center grid-gap">
+	<div class="container cols-8 cols-offset-lg-4-16 cols-offset-sm-2-20 align-lg-center grid-gap">
 		<?php if( have_rows('benefit') ):
 			while( have_rows('benefit') ): the_row(); ?>
 				<div class="col slide-up core-benefits">
@@ -258,7 +258,7 @@ get_header();?>
 
 <?php if( have_rows('hofmag_for_section') ):
 	while( have_rows('hofmag_for_section') ): the_row(); ?>
-<section class="section mb1 ml1 mr1 pt2 pb2">
+<section class="section mb1 ml1 mr1 pt2 pb2 p-sm-t1">
 	<div class="container cols-12 cols-offset-lg-4-16 cols-sm-24 grid-gap">
 		<?php if( have_rows('for_block') ):
 			while( have_rows('for_block') ): the_row(); ?>

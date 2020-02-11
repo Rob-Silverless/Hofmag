@@ -16,7 +16,7 @@ get_header();?>
     while( have_rows('introduction') ): the_row(); ?>
 <section class="section section__mid-grey-opacity mr1 ml1 mb1">
 	<div class="container cols-14-10 cols-xl-24">
-		<div class="col pt10 pb10 align-xl-center slide-up">
+		<div class="col pt10 pb10 p-sm-t3 p-sm-b7 align-xl-center slide-up">
 			<h3 class="heading heading__caps heading__thin heading__lg"><?php the_sub_field('text')?></h3>
 		</div>
 		<div class="col image-overlap align-xl-center slow-fade delay">
@@ -35,15 +35,15 @@ get_header();?>
 
 <?php if( have_rows('trusted_carousel') ):
     while( have_rows('trusted_carousel') ): the_row(); ?>
-<section class="section section__light-grey mr1 ml1 mb1 pt5 pb5">
+<section class="section section__light-grey mr1 ml1 mb1 pt5 pb5 p-sm-t3">
 	<div class="container cols-24">
-		<div class="col align-center pb5">
+		<div class="col align-center pb5 p-sm-b3">
 			<h3 class="heading heading__caps heading__thin heading__lg slide-up"><?php the_sub_field('title')?></h3>
 		</div>
 	</div>
 	<?php if( have_rows('carousel_container') ):
     while( have_rows('carousel_container') ): the_row(); ?>
-		<div class="container cols-24 cols-offset-xl-2-20">
+		<div class="container cols-24 cols-offset-xl-2-20 cols-sm-24">
 			<div class="col">
 				<div class="owl-carousel owl-theme single-carousel">
 					<?php if( have_rows('carousel_sections') ):
@@ -108,7 +108,7 @@ get_header();?>
 
 <?php if( have_rows('conditions_section') ):
     while( have_rows('conditions_section') ): the_row(); ?>
-<section class="section section__mid-grey-opacity mr1 ml1 mb1 pt5 pb5 conditions-container">
+<section class="section section__mid-grey-opacity mr1 ml1 mb1 pt5 pb5 p-sm-t3 p-sm-b3 conditions-container">
 	<div class="container cols-offset-6-12 cols-offset-sm-1-22">
 		<div class="col align-center pb3">
 			<h3 class="heading heading__lg heading__thin slide-up"><?php the_sub_field('title');?></h3>
@@ -142,7 +142,7 @@ get_header();?>
 
 <?php if( have_rows('efficacy_section') ):
     while( have_rows('efficacy_section') ): the_row(); ?>
-<section class="section section__light-grey mr1 ml1 mb1 pb5 pt5">
+<section class="section section__light-grey mr1 ml1 mb1 pb5 pt5 p-sm-t3 p-sm-b3">
 	<div class="container cols-offset-6-12 cols-offset-sm-2-20">
 		<div class="col align-center">
 			<h3 class="heading heading__thin heading__lg slide-up"><?php the_sub_field('mid_car_title');?></h3>

@@ -1,7 +1,7 @@
 <?php
 	$image = get_sub_field('image');
 ?>
-<section class="section section__white mr1 ml1 mb1 pt5 pb5">
+<section class="section section__white mr1 ml1 mb1 pt5 pb5 p-sm-t3 p-sm-b3 ">
 	<div class="container cols-offset-12-12 grid-gap">
 		<div class="col mb2">
 			<img src="<?php echo esc_url($image['url']); ?>" style="max-width:3rem" class="slow-fade"/>
