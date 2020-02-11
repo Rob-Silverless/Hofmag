@@ -17,7 +17,7 @@ get_header();?>
 <section class="section section__mid-grey-opacity mr1 ml1 mb1">
 	<div class="container cols-14-10 cols-xl-24">
 		<div class="col pt10 pb10 p-sm-t3 p-sm-b7 align-xl-center slide-up">
-			<h3 class="heading heading__caps heading__thin heading__lg"><?php the_sub_field('text')?></h3>
+			<h3 class="heading heading__caps heading__thin heading__lg introducing"><?php the_sub_field('text')?></h3>
 		</div>
 		<div class="col image-overlap align-xl-center slow-fade delay">
 			<?php
